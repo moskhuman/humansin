@@ -1,0 +1,84 @@
+what is the importance of salesforce integration ?
+why we do the integration what is the process ?
+typical integrations in salesforce and with salesforce
+sap-salesforcce
+oracle-salesforce
+microsoft-salesforce
+data replication,analysis/bi,data cleaning 
+why integration is so important ?
+================================================================
+types of the integration ?
+==============================================================
+1-remote process invocation -request and reply
+2-remote process invocation-fire and forget
+3-batch data synchonization 
+4-remote call
+5-ui update based on the data changes 
+================================================================
+remote process invocation -request and reply
+---------------------------------------------
+salesforce invoke a process on a remote system waits from the completion of that process and 
+then track state based on the response from the remote system 
+---------------------------------------------------------------------------------------------
+remote process invocation fire and foreget
+------------------------------------------
+salesforce invokes a process from remote system and it doesnt wait fr complition of 
+the process instead of the remote process recives an acknowledges the request and then hands off control back to salesforce
+----------------------------------------------------------------------------------------------------------------------------
+batch process synchonization
+----------------------------
+Data stored in Force.com should be created or refreshed to reflect 
+updates from an external system, and when changes from Force.com should be sent to an external system.
+Updates in either direction are done in a batch manner.
+--------------------------------------------------------
+remote call
+-----------
+Data stored in Force.com is created, retrieved, updated, or deleted by a remote system.
+-------------------------------------------------------------------------------------------
+UI update based on the data changes
+----------------------------------
+The Salesforce user interface must be automatically updated as a result of changes to Salesforce data.
+========================================================================================================================
+The integration patterns in this document are classified into two categories:
+======================================================================================================================
+REST API Service:
+=================
+o'auth
+open authentication
+its basically a protocal that supports a authorized workflow user has permissions to do somethng 
+in oauth we have four roles
+
+salesforce uses o'auth protocallto aloow users to securely access the data without reveal the usaer name and password 
+before making the REST API calls you must autheticate user using O'AUTH 2.0
+
+1st setup ur application as a connected app in salesforce.com
+2nd determine correct salesforce oauth endpoint for your connected app
+authenticate the connected app user via one of the several difference oauth 2.0 authentication flow 
+an oauth flow defines series of steps used to coordinate the process between your application and salesforce 
+
+Supported OAUTH2.0 flows 
+1-webserver flow
+2-user -agent flow
+3-username-password flow 
+
+after sucessfully authenticated the connected appuser with salesforce you will receive a "acess token" 
+which can be used to make authenticated REST API calls
+STEPS FOR CONNECTED APP
+created the connected app
+entre the call back url depending on the which authentic flow you use
+the url that a user browsers is redirected to after sucessfully authenticated
+url is used for some oauth to flows to pass the access token 
+url must be used http/https or custom uri schema
+entre url for info url this is user can go for more information about yoour application 
+click save u will have consumer key is created and consumer secret cretaed 
+use consumer key and consumer secret to authenticate your application 
+
+Oauth end points are the urls you use to authentication request to salesforce 
+
+Web Server OAUTH Authentication Flow 
+what is web server oauth?
+why we use web server oauth?
+
+
+
+
